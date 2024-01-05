@@ -1,0 +1,17 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+
+ENTITY VOTER_3BIT IS
+	PORT (
+		Din : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+		Dout : OUT STD_LOGIC
+	);
+END VOTER_3BIT;
+
+ARCHITECTURE Behavior OF VOTER_3BIT IS
+
+BEGIN
+
+	Dout <= (Din(0) AND Din(1)) OR (Din(0) AND Din(2)) OR (Din(1) AND Din(2));
+
+END ARCHITECTURE;
